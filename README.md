@@ -1,33 +1,3 @@
-# multiglance (multiglance)
+# MultiGlancer
 
-Check multiple screen sizes at a glance
-
-## Install the dependencies
-```bash
-yarn
-# or
-npm install
-```
-
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
-
-
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+`MultiGlancer is an app made with quasar framework that lets you view a web page in multiple resolutions in the same screen, you can customize all the resolutions you want to see`
