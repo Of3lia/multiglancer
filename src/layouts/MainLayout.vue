@@ -29,6 +29,7 @@
         <q-item-label header>
           Views
         </q-item-label>
+
         <views-edit />
       </q-list>
     </q-drawer>
@@ -36,6 +37,18 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <q-card style="position:fixed; bottom: 1em; right:5em; width: 20em;" class="shadow-10">
+      <q-item>
+        <q-item-section>
+          <q-slider v-model="appSt.scale" :step="0.1" :min="0.1" :max="1" :label="true" />
+        </q-item-section>
+        <q-item-section side>
+          <q-icon size="md" name="zoom_in" />
+        </q-item-section>
+      </q-item>
+    </q-card>
+
   </q-layout>
 </template>
 
@@ -44,8 +57,10 @@ import { storeToRefs } from 'pinia'
 import { useAppStore } from 'src/stores/app'
 import { ref } from 'vue'
 import ViewsEdit from 'src/components/ViewsEdit.vue';
+import { LocalStorage } from 'quasar';
 
-const { url } = storeToRefs(useAppStore())
+const appSt = useAppStore()
+const { url } = storeToRefs(appSt)
 
 const leftDrawerOpen = ref(false)
 

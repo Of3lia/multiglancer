@@ -1,6 +1,7 @@
 <template>
-  <div style="padding: 13em 2em">
-    <div v-for="(view, i) in views" :key="i" :style="`transform:scale(${scale});`" style="display:inline-block">
+  <div style="padding: 20em 2em">
+    <div v-for="(view, i) in views.filter(x => x.enabled == true)" :key="i" :style="`transform:scale(${scale});`"
+      style="display:inline-block">
       <div :style="`margin:-${view.height * (1 - scale)}px -${view.width * (1 - scale) / 2}px `">
         <h3>
           {{  view.name  }} {{  view.width  }}x{{  view.height  }}
@@ -22,9 +23,8 @@ import { storeToRefs } from 'pinia'
 import { useAppStore } from 'src/stores/app'
 import { ref } from 'vue'
 
-const { url, views } = storeToRefs(useAppStore())
+const { url, views, scale } = storeToRefs(useAppStore())
 
-const scale = ref(0.5)
 </script>
 
 <style scoped>
