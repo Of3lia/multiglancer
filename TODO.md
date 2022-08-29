@@ -1,7 +1,11 @@
-- Add save views on local storage on change
+- Ask "Are you sure you want to reset app?"
 
-- Add modify scale
+- Reload page on reset app
 
-- Add enabled or disabled state to views
+- DONE ~~Add save views on local storage on change~~
 
-- Add margin to the left of the views
+- DONE ~~Add modify scale~~
+
+- DONE ~~Add enabled or disabled state to views~~
+
+- DONE ~~Add margin to the left of the views~~
