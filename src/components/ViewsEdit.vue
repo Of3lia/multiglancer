@@ -23,7 +23,7 @@
   </q-item>
 
   <q-item-section>
-    <q-btn @click="LocalStorage.clear()" class="bg-warning">Reset</q-btn>
+    <q-btn @click="reset()" class="bg-warning">Reset</q-btn>
   </q-item-section>
 </template>
 
@@ -33,14 +33,21 @@ import { LocalStorage } from 'quasar';
 import { View } from 'src/models/views';
 import { useAppStore } from 'src/stores/app';
 
-const { views } = storeToRefs(useAppStore())
+const appSt = useAppStore()
+const { views } = storeToRefs(appSt)
 
 const addView = () => {
   views.value.push({} as View)
 }
 
 const delView = (i: number) => {
-  console.log(i)
   views.value.splice(i, 1)
+}
+
+const reset = () => {
+  if (confirm('Are you sure you want to reset all config?')) {
+    LocalStorage.clear()
+    location.reload()
+  }
 }
 </script>
