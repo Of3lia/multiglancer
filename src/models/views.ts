@@ -3,4 +3,5 @@ export interface View{
   width:number
   height:number
   enabled:boolean
+  scale:number
 }
