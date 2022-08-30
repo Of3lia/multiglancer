@@ -1,9 +1,6 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-
+  <q-layout view="hHh Lpr lFf">
     <q-header elevated>
-
-
       <div>
         <!-- <div class=" q-gutter-y-md column"> -->
         <div>
@@ -27,7 +24,7 @@
       </div>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+    <q-drawer v-model="leftDrawerOpen" bordered>
       <q-list>
         <q-item-label header>
           Views
@@ -58,7 +55,7 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import { useAppStore } from 'src/stores/app'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import ViewsEdit from 'src/components/ViewsEdit.vue';
 
 const appSt = useAppStore()
